@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZHI portfolio</title>
+    <link rel="stylesheet" href="achievement.css" />
+    <link rel="stylesheet" href="anim.css" />
+    <style></style>
+  </head>
+  <body>
+    <nav class="navbar" data-reveal="down" data-reveal-delay="1">
+      <button class="hamburger" id="hamburger">☰</button>
+      <div class="side-menu" id="sideMenu">
+        <div class="menu-header">// NAVIGATE</div>
+        <ul>
+          <li><a href="index.html" class="menu-link">⬡ HOME</a></li>
+          <li><a href="about.html" class="menu-link">⬡ ABOUT ME</a></li>
+          <li>
+            <a href="achievement.html" class="menu-link active"
+              >⬡ ACHIEVEMENT</a
+            >
+          </li>
+          <li><a href="project.html" class="menu-link">⬡ PROJECT</a></li>
+        </ul>
+        <div class="menu-footer">SYS.VER 1.0.0</div>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <div class="nav-title">ACHIEVEMENT.LOG</div>
+      <div class="translate-wrapper">
+        <button class="translate-btn" id="translateBtn">🌐 LANG</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-opt" data-lang="en">🇺🇸 English</button>
+          <button class="lang-opt" data-lang="id">🇮🇩 Indonesia</button>
+          <button class="lang-opt" data-lang="ja">🇯🇵 日本語</button>
+          <button class="lang-opt" data-lang="ko">🇰🇷 한국어</button>
+          <button class="lang-opt" data-lang="zh">🇨🇳 中文</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-main">
+      <div class="bg-circuit"></div>
+
+      <div class="page-header" data-reveal="up" data-reveal-delay="2">
+        <div class="page-tag" data-i18n="achSub">CERTIFICATES & HONORS</div>
+        <h1 class="page-title" data-i18n="achPageTitle">ACHIEVEMENT.LOG</h1>
+        <div class="title-line"></div>
+        <p class="page-desc">
+          Unlocked achievements and earned certificates throughout the journey.
+        </p>
+      </div>
+
+      <!-- STATS BAR -->
+      <div class="stats-bar">
+        <div class="stat-box" data-reveal="up" data-reveal-delay="2">
+          <span class="s-num">1+</span>
+          <span class="s-label">Certificates</span>
+        </div>
+        <div class="stat-box" data-reveal="up" data-reveal-delay="3">
+          <span class="s-num">20+</span>
+          <span class="s-label">Competition</span>
+        </div>
+        <div class="stat-box" data-reveal="up" data-reveal-delay="5">
+          <span class="s-num">100%</span>
+          <span class="s-label">Dedication</span>
+        </div>
+      </div>
+
+      <!-- COMPETITION SECTION -->
+      <div class="cert-section">
+        <div class="section-title" data-reveal="left" data-reveal-delay="2">
+          <span class="section-icon">🏆</span>
+          <span data-i18n="certTitle4">Competition Certificates</span>
+        </div>
+        <div class="cert-grid">
+          <!-- HKICO Card — clickable, opens PDF certificate in new tab -->
+          <a
+            href="certificates/Bagi HKICO HEAT 2026 - GOLD_36.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cert-card gold clickable"
+            data-reveal="up"
+            data-reveal-delay="2"
+            title="View Certificate PDF"
+          >
+            <div class="cert-bg-pattern"></div>
+            <div class="cert-ribbon">GOLD MEDAL</div>
+            <div class="cert-icon">🏅</div>
+            <div class="cert-body">
+              <div class="cert-category">INTERNATIONAL COMPETITION</div>
+              <div class="cert-name" data-i18n="certTitle1">HKICO</div>
+              <div class="cert-desc" data-i18n="certDesc1">
+                Gold Award — Senior Secondary Group in Python, Hong Kong
+                International Computational Olympiad Heat Round 2025–2026
+              </div>
+              <div class="cert-meta">
+                <span class="cert-date">📅 2026</span>
+                <span class="cert-level">🏅 GOLD MEDAL</span>
+              </div>
+            </div>
+            <div class="cert-badge">VERIFIED</div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <div class="scan-line"></div>
+    <script src="main.js"></script>
+    <script src="anim.js"></script>
+  </body>
+</html>

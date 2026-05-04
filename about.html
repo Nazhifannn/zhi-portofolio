@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZHI portfolio</title>
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="anim.css" />
+  </head>
+  <body>
+    <nav class="navbar" data-reveal="down" data-reveal-delay="1">
+      <button class="hamburger" id="hamburger">☰</button>
+      <div class="side-menu" id="sideMenu">
+        <div class="menu-header">// NAVIGATE</div>
+        <ul>
+          <li>
+            <a href="index.html" class="menu-link" data-page="home">⬡ HOME</a>
+          </li>
+          <li>
+            <a href="about.html" class="menu-link active" data-page="about"
+              >⬡ ABOUT ME</a
+            >
+          </li>
+          <li>
+            <a href="achievement.html" class="menu-link" data-page="achievement"
+              >⬡ ACHIEVEMENT</a
+            >
+          </li>
+          <li>
+            <a href="project.html" class="menu-link" data-page="project"
+              >⬡ PROJECT</a
+            >
+          </li>
+        </ul>
+        <div class="menu-footer">SYS.VER 1.0.0</div>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <div class="nav-title">ABOUT_ME.EXE</div>
+      <div class="translate-wrapper">
+        <button class="translate-btn" id="translateBtn">🌐 LANG</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-opt" data-lang="en">🇺🇸 English</button>
+          <button class="lang-opt" data-lang="id">🇮🇩 Indonesia</button>
+          <button class="lang-opt" data-lang="ja">🇯🇵 日本語</button>
+          <button class="lang-opt" data-lang="ko">🇰🇷 한국어</button>
+          <button class="lang-opt" data-lang="zh">🇨🇳 中文</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-main">
+      <div class="bg-grid"></div>
+
+      <div class="page-header" data-reveal="up" data-reveal-delay="2">
+        <div class="page-tag" data-i18n="aboutSub">SYSTEM PROFILE LOADED</div>
+        <h1 class="page-title" data-i18n="aboutTitle">ABOUT_ME.EXE</h1>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- PROFILE CARD -->
+        <div class="profile-card" data-reveal="left" data-reveal-delay="3">
+          <div class="avatar-wrap">
+            <div class="avatar">
+              <img
+                src="asset/uploadf96056e02d5f6336b601302a79b82b65.png"
+                alt="Profile Avatar"
+              />
+            </div>
+            <div class="avatar-ring"></div>
+          </div>
+          <div class="profile-name">NAJWAN AZHIM AFANDI</div>
+          <div class="profile-role">// DEVELOPER & CREATOR</div>
+          <p class="profile-bio" data-i18n="bioText">
+            I'm a passionate developer and creator who loves building things
+            with technology. Always learning, always creating.
+          </p>
+          <div class="profile-stats">
+            <div class="stat">
+              <span class="stat-num">10+</span
+              ><span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5+</span
+              ><span class="stat-label">Awards</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">17+</span
+              ><span class="stat-label">Years</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="info-panel">
+          <!-- SKILLS -->
+          <div class="section-card" data-reveal="right" data-reveal-delay="3">
+            <div class="section-label" data-i18n="skillsTitle">// SKILLS</div>
+            <div class="skills-grid">
+              <div class="skill-item" data-reveal="up" data-reveal-delay="1">
+                <div class="skill-name">HTML / CSS</div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--pct: 90%"></div>
+                </div>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-item" data-reveal="up" data-reveal-delay="2">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--pct: 80%"></div>
+                </div>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-item" data-reveal="up" data-reveal-delay="3">
+                <div class="skill-name">Python</div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--pct: 70%"></div>
+                </div>
+                <span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-item" data-reveal="up" data-reveal-delay="4">
+                <div class="skill-name">UI / UX Design</div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--pct: 50%"></div>
+                </div>
+                <span class="skill-pct">50%</span>
+              </div>
+              <div class="skill-item" data-reveal="up" data-reveal-delay="5">
+                <div class="skill-name">Git / GitHub</div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--pct: 85%"></div>
+                </div>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-item" data-reveal="up" data-reveal-delay="6">
+                <div class="skill-name">AI prompt</div>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--pct: 80%"></div>
+                </div>
+                <span class="skill-pct">80%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACHIEVEMENTS MINI -->
+          <div class="section-card" data-reveal="right" data-reveal-delay="4">
+            <div class="section-label" data-i18n="achieveTitle">
+              // ACHIEVEMENTS
+            </div>
+            <div class="mini-list">
+              <div class="mini-item" data-reveal="left" data-reveal-delay="2">
+                <span class="mini-icon">🏅</span>
+                <span class="mini-text"
+                  >HKICO 2026 – International Level - Gold Medal</span
+                >
+              </div>
+            </div>
+            <a href="achievement.html" class="see-more"
+              >VIEW ALL ACHIEVEMENTS →</a
+            >
+          </div>
+
+          <!-- HOBBIES -->
+          <div class="section-card" data-reveal="up" data-reveal-delay="3">
+            <div class="section-label" data-i18n="hobbyTitle">// HOBBIES</div>
+            <div class="hobby-tags">
+              <span class="htag" data-reveal="scale" data-reveal-delay="1"
+                >💻 Coding</span
+              >
+              <span class="htag" data-reveal="scale" data-reveal-delay="2"
+                >🎮 Gaming</span
+              >
+              <span class="htag" data-reveal="scale" data-reveal-delay="3"
+                >🎵 Music</span
+              >
+              <span class="htag" data-reveal="scale" data-reveal-delay="5"
+                >🎨 Design</span
+              >
+              <span class="htag" data-reveal="scale" data-reveal-delay="6"
+                >🌏 Traveling</span
+              >
+              <span class="htag" data-reveal="scale" data-reveal-delay="7"
+                >📷 Photography</span
+              >
+              <span class="htag" data-reveal="scale" data-reveal-delay="8"
+                >🤖 AI & Tech</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="scan-line"></div>
+    <script src="main.js"></script>
+    <script src="anim.js"></script>
+  </body>
+</html>

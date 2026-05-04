@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZHI portfolio</title>
+    <link rel="stylesheet" href="project.css" />
+    <link rel="stylesheet" href="anim.css" />
+  </head>
+  <body>
+    <!-- ========== PROJECT DETAIL MODAL ========== -->
+    <div id="projectModal" class="proj-modal-overlay" aria-hidden="true">
+      <div class="proj-modal-box">
+        <!-- MODAL HEADER -->
+        <div class="proj-modal-header">
+          <div class="proj-modal-title-wrap">
+            <div class="proj-modal-cat-dot" id="projModalDot"></div>
+            <div>
+              <div class="proj-modal-category" id="projModalCategory">
+                CATEGORY
+              </div>
+              <div class="proj-modal-title" id="projModalTitle">
+                Project Title
+              </div>
+            </div>
+          </div>
+          <button class="proj-modal-close" id="projModalClose">✕</button>
+        </div>
+
+        <!-- MODAL BODY -->
+        <div class="proj-modal-body">
+          <!-- VIDEO / PREVIEW AREA -->
+          <div class="proj-video-area" id="projVideoArea">
+            <!-- VIDEO PLAYER (shown when video file exists) -->
+            <div
+              class="proj-video-wrap"
+              id="projVideoWrap"
+              style="display: none"
+            >
+              <video id="projVideo" controls playsinline>
+                <source id="projVideoSrc" src="" type="video/mp4" />
+                Browser kamu tidak mendukung video.
+              </video>
+            </div>
+
+            <!-- COMING SOON (no video yet) -->
+            <div class="proj-video-soon" id="projVideoSoon">
+              <div class="vs-spinner">
+                <div class="vs-ring r1"></div>
+                <div class="vs-ring r2"></div>
+                <div class="vs-ring r3"></div>
+                <span class="vs-icon" id="projVsSoonIcon">▶</span>
+              </div>
+              <div class="vs-title">VIDEO COMING SOON</div>
+              <div class="vs-sub">// Demo video not yet uploaded</div>
+            </div>
+          </div>
+
+          <!-- INFO AREA -->
+          <div class="proj-info-area">
+            <p class="proj-modal-desc" id="projModalDesc"></p>
+
+            <div class="proj-tech-section">
+              <div class="proj-tech-label">// TECH STACK</div>
+              <div class="proj-tech-tags" id="projTechTags"></div>
+            </div>
+
+            <div class="proj-links-section">
+              <div class="proj-tech-label"></div>
+              <div class="proj-modal-actions">
+                <a
+                  class="proj-action-btn site"
+                  id="projSiteBtn"
+                  href="#"
+                  target="_blank"
+                  style="display: none"
+                >
+                  🌐 VISIT SITE
+                </a>
+                <a
+                  class="proj-action-btn code"
+                  id="projCodeBtn"
+                  href="#"
+                  target="_blank"
+                  style="display: none"
+                >
+                  &lt;/&gt; SOURCE CODE
+                </a>
+                <span class="proj-action-soon" id="projActionSoon"> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== END MODAL ========== -->
+
+    <!-- NAVBAR -->
+    <nav class="navbar" data-reveal="down" data-reveal-delay="1">
+      <button class="hamburger" id="hamburger">☰</button>
+      <div class="side-menu" id="sideMenu">
+        <div class="menu-header">// NAVIGATE</div>
+        <ul>
+          <li><a href="index.html" class="menu-link">⬡ HOME</a></li>
+          <li><a href="about.html" class="menu-link">⬡ ABOUT ME</a></li>
+          <li>
+            <a href="achievement.html" class="menu-link">⬡ ACHIEVEMENT</a>
+          </li>
+          <li><a href="project.html" class="menu-link active">⬡ PROJECT</a></li>
+        </ul>
+        <div class="menu-footer">SYS.VER 1.0.0</div>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <div class="nav-title">PROJECT.DIR</div>
+      <div class="translate-wrapper">
+        <button class="translate-btn" id="translateBtn">🌐 LANG</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-opt" data-lang="en">🇺🇸 English</button>
+          <button class="lang-opt" data-lang="id">🇮🇩 Indonesia</button>
+          <button class="lang-opt" data-lang="ja">🇯🇵 日本語</button>
+          <button class="lang-opt" data-lang="ko">🇰🇷 한국어</button>
+          <button class="lang-opt" data-lang="zh">🇨🇳 中文</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-main">
+      <div class="bg-hex"></div>
+
+      <!-- PAGE HEADER -->
+      <div class="page-header" data-reveal="up" data-reveal-delay="2">
+        <div class="page-tag" data-i18n="projSub">WORK IN PROGRESS...</div>
+        <h1 class="page-title" data-i18n="projPageTitle">PROJECT.DIR</h1>
+        <div class="title-line"></div>
+        <p class="page-desc" data-i18n="projDesc">
+          My sites, web templates, and AI prompt experiments.
+        </p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs" data-reveal="up" data-reveal-delay="3">
+        <button class="ftab active" data-filter="all" data-i18n="filterAll">
+          ALL
+        </button>
+        <button class="ftab" data-filter="mysite" data-i18n="filterMySite">
+          MY SITE
+        </button>
+        <button class="ftab" data-filter="template" data-i18n="filterTemplate">
+          MINI PROJEK
+        </button>
+        <button class="ftab" data-filter="ai" data-i18n="filterAI">
+          AI PROMPT
+        </button>
+      </div>
+      <!-- PROJECT GRID -->
+      <!--
+      ╔══════════════════════════════════════════════════════════════╗
+      ║  CARA MENAMBAH PROJECT:                                      ║
+      ║  1. Copy salah satu blok .proj-card di bawah                 ║
+      ║  2. Isi data-* attributes:                                   ║
+      ║     data-filter   : "mysite" | "template" | "ai"             ║
+      ║     data-title    : Judul project                            ║
+      ║     data-category : MY SITE / TEMPLATE / AI PROMPT           ║
+      ║     data-desc     : Deskripsi project                        ║
+      ║     data-tech     : Tech stack pisah koma                    ║
+      ║     data-video    : Path video demo (contoh: "video/demo.mp4"║
+      ║                     )Kosongkan "" jika belum ada             ║
+      ║     data-site     : URL website live                         ║
+      ║     data-code     : URL GitHub / source code                 ║
+      ║  3. Untuk VIDEO: taruh file .mp4 di folder "video/"          ║
+      ╚══════════════════════════════════════════════════════════════╝
+      -->
+      <div class="project-grid" id="projectGrid">
+        <!-- ===== MY SITE ===== -->
+        <div
+          class="proj-card"
+          data-reveal="up"
+          data-reveal-delay="2"
+          data-filter="mysite"
+          data-title="MBI BIG FAIR 17ᵗʰ"
+          data-category="MY SITE"
+          data-desc="The MBI Big Fair (MBF) is an annual event organized by MBI Amanatul Ummah in Pacet, Mojokerto. Now in its 17th year, the MBI Big Fair continues its tradition as a prestigious competition platform featuring a variety of contests and a series of inspiring events. The event is made even more vibrant by the creative, innovative, and extraordinary works of MBI students, making MBF a stage for the expression of talent, imagination, and achievement."
+          data-tech="HTML,CSS,JavaScript"
+          data-video="video/MBI BIG FAIR 17 - Google Chrome 2026-04-13 21-25-11.mp4"
+          data-site="https://mbibigfair.id"
+          data-code="https://github.com/Nazhifannn/mbibigfair17.github.io"
+        >
+          <div class="proj-card-top mysite">
+            <div class="proj-card-label">MY SITE</div>
+            <div class="proj-card-title-top">
+              MBI BIG FAIR 17ᵗʰ
+              <img
+                src="asset/mbflogo.png"
+                alt="MBI Logo"
+                class="proj-card-logo"
+              />
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-desc">
+              The MBI Big Fair (MBF) is an annual event organized by MBI
+              Amanatul Ummah in Pacet, Mojokerto.
+            </div>
+            <div class="proj-card-tech">
+              <span class="ptag">HTML</span>
+              <span class="ptag">CSS</span>
+              <span class="ptag">JavaScript</span>
+            </div>
+          </div>
+          <button class="proj-view-btn">VIEW PROJECT →</button>
+        </div>
+
+        <!-- ===== TEMPLATE FOR WEBSITE ===== -->
+        <div
+          class="proj-card"
+          data-reveal="up"
+          data-reveal-delay="3"
+          data-filter="template"
+          data-title="Checkboxes"
+          data-category="MINI PROJEK"
+          data-desc="Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces."
+          data-tech="HTML,CSS,JavaScript"
+          data-video=""
+          data-site=""
+          data-code=""
+          data-demo="checkboxes"
+        >
+          <div class="proj-card-top template">
+            <div class="proj-card-label">MINI PROJEK</div>
+            <div class="proj-card-title-top">Checkboxes</div>
+          </div>
+          <!-- COVER PREVIEW -->
+
+          <div class="proj-card-body">
+            <div class="proj-card-desc">
+              Checkbox input components with styled checkboxes, labels,
+              descriptions, and responsive designs for forms, settings, and user
+              interfaces.
+            </div>
+            <div class="proj-card-tech">
+              <span class="ptag">HTML</span>
+              <span class="ptag">CSS</span>
+              <span class="ptag">JavaScript</span>
+            </div>
+          </div>
+          <button class="proj-view-btn">VIEW PROJECT →</button>
+        </div>
+        <div
+          class="proj-card"
+          data-reveal="up"
+          data-reveal-delay="3"
+          data-filter="template"
+          data-title="Option groups"
+          data-category="MINI PROJEK"
+          data-desc="Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces."
+          data-tech="HTML,CSS,JavaScript"
+          data-video=""
+          data-site=""
+          data-code=""
+          data-demo="options group"
+        >
+          <div class="proj-card-top template">
+            <div class="proj-card-label">MINI PROJEK</div>
+            <div class="proj-card-title-top">Option groups</div>
+          </div>
+          <!-- COVER PREVIEW -->
+
+          <div class="proj-card-body">
+            <div class="proj-card-desc">
+              Neobrutalism-style select components built with Tailwind CSS v4.
+              Featuring thick borders, hard shadows, and custom dropdown
+              styling. Great for forms, filtering options, and menus with a
+              bold, high-contrast design.
+            </div>
+            <div class="proj-card-tech">
+              <span class="ptag">HTML</span>
+              <span class="ptag">CSS</span>
+              <span class="ptag">JavaScript</span>
+            </div>
+          </div>
+          <button class="proj-view-btn">VIEW PROJECT →</button>
+        </div>
+        <!-- ===== AI PROMPT ===== -->
+        <div
+          class="proj-card"
+          data-reveal="up"
+          data-reveal-delay="4"
+          data-filter="ai"
+          data-title="SITTING & HORSE"
+          data-category="AI PROMPT"
+          data-desc="Neobrutalism-style select components built with Tailwind CSS v4. Featuring thick borders, hard shadows, and custom dropdown styling. Great for forms, filtering options, and menus with a bold, high-contrast design."
+          data-tech="Prompt Engineering,ChatGPT"
+          data-video=""
+          data-site=""
+          data-code=""
+          data-img-prompt="asset/prompt ai 1.png"
+          data-img-result="asset/ai1.png"
+        >
+          <div class="proj-card-top ai">
+            <div class="proj-card-label">AI PROMPT</div>
+            <div class="proj-card-title-top">SITTING & HORSE</div>
+          </div>
+          <!-- COVER IMAGE -->
+          <div class="proj-card-cover ai-cover">
+            <img
+              src="asset/ai1.png"
+              alt="AI Prompt Cover"
+              class="proj-card-cover-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="proj-card-cover-overlay">
+              <span class="cover-badge">PROMPT PREVIEW</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-desc">
+              Curated &amp; tested prompts for coding, design, writing, and
+              problem-solving with LLMs.
+            </div>
+            <div class="proj-card-tech">
+              <span class="ptag">ChatGPT</span>
+            </div>
+          </div>
+          <button class="proj-view-btn">VIEW PROJECT →</button>
+        </div>
+        <div
+          class="proj-card"
+          data-reveal="up"
+          data-reveal-delay="4"
+          data-filter="ai"
+          data-title="CULTURE BMW M5 AESTHETIC"
+          data-category="AI PROMPT"
+          data-desc="A curated collection of effective AI prompts for coding, design, writing, and problem-solving. Each prompt is tested and optimized for best results with modern LLMs like ChatGPT, Claude, and Gemini."
+          data-tech="Prompt Engineering,ChatGPT"
+          data-video=""
+          data-site=""
+          data-code=""
+          data-img-prompt="asset/prompt ai 2.png"
+          data-img-result="asset/ai2.png"
+        >
+          <div class="proj-card-top ai">
+            <div class="proj-card-label">AI PROMPT</div>
+            <div class="proj-card-title-top">CULTURE BMW M5 AESTHETIC</div>
+          </div>
+          <!-- COVER IMAGE -->
+          <div class="proj-card-cover ai-cover">
+            <img
+              src="asset/ai2.png"
+              alt="AI Prompt Cover"
+              class="proj-card-cover-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="proj-card-cover-overlay">
+              <span class="cover-badge">PROMPT PREVIEW</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-desc">
+              Curated &amp; tested prompts for coding, design, writing, and
+              problem-solving with LLMs.
+            </div>
+            <div class="proj-card-tech">
+              <span class="ptag">ChatGPT</span>
+            </div>
+          </div>
+          <button class="proj-view-btn">VIEW PROJECT →</button>
+        </div>
+        <div
+          class="proj-card"
+          data-reveal="up"
+          data-reveal-delay="4"
+          data-filter="ai"
+          data-title="GRUNGE STYLE TOKYO"
+          data-category="AI PROMPT"
+          data-desc="A curated collection of effective AI prompts for coding, design, writing, and problem-solving. Each prompt is tested and optimized for best results with modern LLMs like ChatGPT, Claude, and Gemini."
+          data-tech="Prompt Engineering,ChatGPT"
+          data-video=""
+          data-site=""
+          data-code=""
+          data-img-prompt="asset/prompt ai 3.png"
+          data-img-result="asset/ai3.png"
+        >
+          <div class="proj-card-top ai">
+            <div class="proj-card-label">AI PROMPT</div>
+            <div class="proj-card-title-top">GRUNGE STYLE TOKYO</div>
+          </div>
+          <!-- COVER IMAGE -->
+          <div class="proj-card-cover ai-cover">
+            <img
+              src="asset/ai3.png"
+              alt="AI Prompt Cover"
+              class="proj-card-cover-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="proj-card-cover-overlay">
+              <span class="cover-badge">PROMPT PREVIEW</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-desc">
+              Curated &amp; tested prompts for coding, design, writing, and
+              problem-solving with LLMs.
+            </div>
+            <div class="proj-card-tech">
+              <span class="ptag">ChatGPT</span>
+            </div>
+          </div>
+          <button class="proj-view-btn">VIEW PROJECT →</button>
+        </div>
+        <div
+          class="proj-card"
+          data-reveal="up"
+          data-reveal-delay="4"
+          data-filter="ai"
+          data-title="CANDID CONCERT MOMENT"
+          data-category="AI PROMPT"
+          data-desc="A curated collection of effective AI prompts for coding, design, writing, and problem-solving. Each prompt is tested and optimized for best results with modern LLMs like ChatGPT, Claude, and Gemini."
+          data-tech="Prompt Engineering,ChatGPT"
+          data-video=""
+          data-site=""
+          data-code=""
+          data-img-prompt="asset/prompt ai 4.png"
+          data-img-result="asset/ai4.png"
+        >
+          <div class="proj-card-top ai">
+            <div class="proj-card-label">AI PROMPT</div>
+            <div class="proj-card-title-top">CANDID CONCERT MOMENT</div>
+          </div>
+          <!-- COVER IMAGE -->
+          <div class="proj-card-cover ai-cover">
+            <img
+              src="asset/ai4.png"
+              alt="AI Prompt Cover"
+              class="proj-card-cover-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="proj-card-cover-overlay">
+              <span class="cover-badge">PROMPT PREVIEW</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-desc">
+              Curated &amp; tested prompts for coding, design, writing, and
+              problem-solving with LLMs.
+            </div>
+            <div class="proj-card-tech">
+              <span class="ptag">ChatGPT</span>
+            </div>
+          </div>
+          <button class="proj-view-btn">VIEW PROJECT →</button>
+        </div>
+        <div
+          class="proj-card"
+          data-reveal="up"
+          data-reveal-delay="4"
+          data-filter="ai"
+          data-title="CARD TRICK"
+          data-category="AI PROMPT"
+          data-desc="A curated collection of effective AI prompts for coding, design, writing, and problem-solving. Each prompt is tested and optimized for best results with modern LLMs like ChatGPT, Claude, and Gemini."
+          data-tech="Prompt Engineering,ChatGPT"
+          data-video=""
+          data-site=""
+          data-code=""
+          data-img-prompt="asset/prompt ai 5.png"
+          data-img-result="asset/ai5.png"
+        >
+          <div class="proj-card-top ai">
+            <div class="proj-card-label">AI PROMPT</div>
+            <div class="proj-card-title-top">CARD TRICK</div>
+          </div>
+          <!-- COVER IMAGE -->
+          <div class="proj-card-cover ai-cover">
+            <img
+              src="asset/ai5.png"
+              alt="AI Prompt Cover"
+              class="proj-card-cover-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="proj-card-cover-overlay">
+              <span class="cover-badge">PROMPT PREVIEW</span>
+            </div>
+          </div>
+          <div class="proj-card-body">
+            <div class="proj-card-desc">
+              Curated &amp; tested prompts for coding, design, writing, and
+              problem-solving with LLMs.
+            </div>
+            <div class="proj-card-tech">
+              <span class="ptag">ChatGPT</span>
+            </div>
+          </div>
+          <button class="proj-view-btn">VIEW PROJECT →</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="scan-line"></div>
+    <script src="main.js"></script>
+    <script src="anim.js"></script>
+    <script src="project.js"></script>
+  </body>
+</html>

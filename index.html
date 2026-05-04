@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZHI portfolio</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="anim.css" />
+  </head>
+  <body>
+    <!-- ========== OPENING ANIMATION OVERLAY ========== -->
+    <div id="opening-overlay">
+      <div class="op-grid"></div>
+      <div class="op-scan"></div>
+      <div class="op-corner tl"></div>
+      <div class="op-corner tr"></div>
+      <div class="op-corner bl"></div>
+      <div class="op-corner br"></div>
+
+      <div class="op-center">
+        <div class="op-hex-wrap">
+          <div class="op-hex-ring h1"></div>
+          <div class="op-hex-ring h2"></div>
+          <div class="op-hex-ring h3"></div>
+          <div class="op-hex-icon">NAA</div>
+        </div>
+        <div class="op-title">CYBER.PORTFOLIO</div>
+        <div class="op-subtitle">// INITIALIZING SYSTEM...</div>
+        <div class="op-boot-lines">
+          <span class="ob-line">&gt; Booting kernel modules........</span>
+          <span class="ob-line ok">&gt; [ OK ] Loaded skill_database.db</span>
+          <span class="ob-line">&gt; Mounting achievement_log.sys...</span>
+          <span class="ob-line ok">&gt; [ OK ] UI renderer initialized</span>
+          <span class="ob-line warn"
+            >&gt; [ READY ] Welcome. Access granted.</span
+          >
+        </div>
+      </div>
+
+      <div class="op-loader-wrap">
+        <div class="op-loader-label">LOADING SYSTEM</div>
+        <div class="op-loader-bar">
+          <div class="op-loader-fill"></div>
+        </div>
+        <div class="op-loader-pct">0%</div>
+      </div>
+    </div>
+    <!-- ========== END OPENING OVERLAY ========== -->
+
+    <!-- NAVBAR -->
+    <nav class="navbar" data-reveal="down" data-reveal-delay="1">
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+      <div class="side-menu" id="sideMenu">
+        <div class="menu-header">// NAVIGATE</div>
+        <ul>
+          <li>
+            <a href="index.html" class="menu-link active" data-page="home"
+              >⬡ HOME</a
+            >
+          </li>
+          <li>
+            <a href="about.html" class="menu-link" data-page="about"
+              >⬡ ABOUT ME</a
+            >
+          </li>
+          <li>
+            <a href="achievement.html" class="menu-link" data-page="achievement"
+              >⬡ ACHIEVEMENT</a
+            >
+          </li>
+          <li>
+            <a href="project.html" class="menu-link" data-page="project"
+              >⬡ PROJECT</a
+            >
+          </li>
+        </ul>
+        <div class="menu-footer">SYS.VER 1.0.0</div>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <div class="translate-wrapper">
+        <button class="translate-btn" id="translateBtn">🌐 LANG</button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-opt" data-lang="en">🇺🇸 English</button>
+          <button class="lang-opt" data-lang="id">🇮🇩 Indonesia</button>
+          <button class="lang-opt" data-lang="ja">🇯🇵 日本語</button>
+          <button class="lang-opt" data-lang="ko">🇰🇷 한국어</button>
+          <button class="lang-opt" data-lang="zh">🇨🇳 中文</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <main class="hero">
+      <div class="glitch-grid"></div>
+      <div class="hero-content">
+        <div
+          class="badge"
+          data-i18n="badge"
+          data-reveal="up"
+          data-reveal-delay="2"
+        >
+          // SYSTEM ONLINE
+        </div>
+        <h1
+          class="name glitch"
+          data-text="NAJWAN AZHIM AFANDI"
+          data-reveal="up"
+          data-reveal-delay="3"
+        >
+          NAJWAN AZHIM AFANDI
+        </h1>
+        <p
+          class="tagline"
+          data-i18n="tagline"
+          data-reveal="up"
+          data-reveal-delay="4"
+        >
+          DEVELOPER · CREATOR · INNOVATOR
+        </p>
+        <div
+          class="hero-desc"
+          data-i18n="heroDesc"
+          data-reveal="up"
+          data-reveal-delay="5"
+        >
+          Welcome to my cyber portfolio. Navigate through the system using the
+          menu.
+        </div>
+        <div class="hero-btns" data-reveal="up" data-reveal-delay="6">
+          <a href="about.html" class="cta-btn" data-i18n="ctaAbout"
+            >ACCESS PROFILE</a
+          >
+          <a
+            href="project.html"
+            class="cta-btn secondary"
+            data-i18n="ctaProject"
+            >VIEW PROJECTS</a
+          >
+        </div>
+      </div>
+
+      <div class="terminal" data-reveal="right" data-reveal-delay="4">
+        <div class="terminal-bar">
+          <span class="dot r"></span><span class="dot y"></span
+          ><span class="dot g"></span>
+          <span class="terminal-title">terminal@cyber:~</span>
+        </div>
+        <div class="terminal-body" id="terminalBody"></div>
+      </div>
+
+      <div class="scan-line"></div>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="anim.js"></script>
+  </body>
+</html>
