@@ -1,31 +1,7 @@
 // =====================================================
 //  PROJECT.JS
-//  - Filter tabs: mysite | template | ai
 //  - Modal dengan video player HTML5
 // =====================================================
-
-// ===== FILTER TABS =====
-const ftabs = document.querySelectorAll(".ftab");
-const projCards = document.querySelectorAll(".proj-card");
-
-ftabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    // Update active tab
-    ftabs.forEach((t) => t.classList.remove("active"));
-    tab.classList.add("active");
-
-    const filter = tab.getAttribute("data-filter");
-
-    projCards.forEach((card) => {
-      const cardFilter = card.getAttribute("data-filter");
-      if (filter === "all" || cardFilter === filter) {
-        card.classList.remove("hidden");
-      } else {
-        card.classList.add("hidden");
-      }
-    });
-  });
-});
 
 // ===== MODAL ELEMENTS =====
 const modal = document.getElementById("projectModal");

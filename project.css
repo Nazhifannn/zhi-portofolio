@@ -282,62 +282,6 @@ body {
 }
 
 /* ===========================
-   FILTER TABS
-=========================== */
-.filter-tabs {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
-  position: relative;
-  z-index: 1;
-}
-
-.ftab {
-  padding: 9px 22px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 2px;
-  background: none;
-  border: 1px solid rgba(168, 85, 247, 0.25);
-  color: var(--text);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.ftab:hover {
-  border-color: var(--purple);
-  color: var(--purple);
-  background: rgba(168, 85, 247, 0.07);
-}
-.ftab.active {
-  background: rgba(168, 85, 247, 0.15);
-  border-color: var(--purple);
-  color: var(--purple);
-  box-shadow: 0 0 14px rgba(168, 85, 247, 0.2);
-}
-
-/* Active state per category filter */
-.ftab[data-filter="mysite"].active {
-  border-color: var(--mysite-color);
-  color: var(--mysite-color);
-  background: rgba(0, 245, 255, 0.1);
-  box-shadow: 0 0 14px rgba(0, 245, 255, 0.15);
-}
-.ftab[data-filter="template"].active {
-  border-color: var(--template-color);
-  color: var(--template-color);
-  background: rgba(255, 0, 170, 0.08);
-  box-shadow: 0 0 14px rgba(255, 0, 170, 0.15);
-}
-.ftab[data-filter="ai"].active {
-  border-color: var(--ai-color);
-  color: var(--ai-color);
-  background: rgba(168, 85, 247, 0.12);
-  box-shadow: 0 0 14px rgba(168, 85, 247, 0.2);
-}
-
-/* ===========================
    PROJECT GRID
 =========================== */
 .project-grid {
@@ -888,13 +832,6 @@ body {
     border-right: none;
     border-bottom: 1px solid rgba(168, 85, 247, 0.08);
     min-height: 220px;
-  }
-  .filter-tabs {
-    gap: 8px;
-  }
-  .ftab {
-    padding: 8px 14px;
-    font-size: 10px;
   }
 }
 

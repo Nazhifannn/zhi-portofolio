@@ -33,15 +33,21 @@ document.addEventListener("click", () => {
 langDropdown.addEventListener("click", (e) => e.stopPropagation());
 
 // ============= I18N DATA =============
+// NOTE: setiap key di sini HARUS punya pasangan data-i18n="key" di salah satu
+// dari 4 halaman (index.html, about.html, achievement.html, project.html).
+// Kalau nambah section baru yang perlu diterjemahkan, tambahkan key di sini
+// juga di ketiga bahasa (en / id / ja) supaya tidak ada yang kelewat.
 const translations = {
   en: {
+    // index.html
     badge: "// SYSTEM ONLINE",
     tagline: "DEVELOPER · CREATOR · INNOVATOR",
     heroDesc:
-      "Welcome to my cyber portfolio. Navigate through the system using the menu.",
+      "Welcome to my website portfolio. Navigate through the system using the menu.",
     ctaAbout: "ACCESS PROFILE",
     ctaProject: "VIEW PROJECTS",
-    // About
+
+    // about.html
     aboutTitle: "ABOUT_ME.EXE",
     aboutSub: "SYSTEM PROFILE LOADED",
     bioText:
@@ -49,28 +55,35 @@ const translations = {
     skillsTitle: "// SKILLS",
     achieveTitle: "// ACHIEVEMENTS",
     hobbyTitle: "// HOBBIES",
-    // Achievement
+
+    // achievement.html
     achPageTitle: "ACHIEVEMENT.LOG",
     achSub: "CERTIFICATES & HONORS",
-    certTitle1: "HKICO",
-    certDesc1: "Gold medalist in Hongkong International Coding Olympiad",
-    certTitle2: "Study Exchange Certificate",
-    certDesc2: "International study exchange program participant",
-    certTitle3: "Excellence Award",
-    certDesc3: "Outstanding academic performance recognition",
     certTitle4: "Competition Certificates",
-    // Project
+    certTitle1: "HKICO",
+    certDesc1:
+      "Gold Award — Senior Secondary Group in Python, Hong Kong International Computational Olympiad Heat Round 2025–2026",
+    certTitle2: "OSP",
+    certDesc2: "Gold Medal — Provincial Science Olympiad (OSP) 2026",
+    certTitle3: "OSH",
+    certDesc3: "Gold Medal — National Education Day Science Olympiad 2026",
+
+    // project.html
     projPageTitle: "PROJECT.DIR",
     projSub: "WORK IN PROGRESS...",
+    projDesc: "My web portfolio project.",
     projEmpty: "No projects loaded yet. Check back soon.",
   },
   id: {
+    // index.html
     badge: "// SISTEM AKTIF",
     tagline: "DEVELOPER · KREATOR · INOVATOR",
     heroDesc:
-      "Selamat datang di portofolio cyber saya. Navigasi melalui sistem menggunakan menu.",
+      "Selamat datang di website portofolio saya. Navigasi melalui sistem menggunakan menu.",
     ctaAbout: "LIHAT PROFIL",
     ctaProject: "LIHAT PROYEK",
+
+    // about.html
     aboutTitle: "TENTANG_SAYA.EXE",
     aboutSub: "PROFIL SISTEM DIMUAT",
     bioText:
@@ -78,26 +91,35 @@ const translations = {
     skillsTitle: "// KEAHLIAN",
     achieveTitle: "// PENCAPAIAN",
     hobbyTitle: "// HOBI",
+
+    // achievement.html
     achPageTitle: "PENCAPAIAN.LOG",
     achSub: "SERTIFIKAT & PENGHARGAAN",
-    certTitle1: "HKICO",
-    certDesc1: "Gold medalist dalam Hongkong International Coding Olympiad",
-    certTitle2: "Sertifikat Study Exchange",
-    certDesc2: "Peserta program pertukaran pelajar internasional",
-    certTitle3: "Penghargaan Keunggulan",
-    certDesc3: "Pengakuan prestasi akademik luar biasa",
     certTitle4: "Sertifikat Kompetisi",
+    certTitle1: "HKICO",
+    certDesc1:
+      "Gold Award — Kelompok SMA dalam Python, Hong Kong International Computational Olympiad Heat Round 2025–2026",
+    certTitle2: "OSP",
+    certDesc2: "Medali Emas — Olimpiade Sains Provinsi (OSP) 2026",
+    certTitle3: "OSH",
+    certDesc3: "Medali Emas — olimpiade sains hari pendidikan nasional 2026",
+
+    // project.html
     projPageTitle: "PROYEK.DIR",
     projSub: "DALAM PENGERJAAN...",
+    projDesc: "Proyek website portofolio saya.",
     projEmpty: "Belum ada proyek yang dimuat. Kembali lagi nanti.",
   },
   ja: {
+    // index.html
     badge: "// システム起動",
     tagline: "開発者 · クリエイター · イノベーター",
     heroDesc:
-      "サイバーポートフォリオへようこそ。メニューからシステムをナビゲートしてください。",
+      "私のポートフォリオサイトへようこそ。メニューを使ってサイト内を閲覧してください。",
     ctaAbout: "プロフィールを見る",
     ctaProject: "プロジェクトを見る",
+
+    // about.html
     aboutTitle: "ABOUT_ME.EXE",
     aboutSub: "プロフィール読み込み完了",
     bioText:
@@ -105,71 +127,24 @@ const translations = {
     skillsTitle: "// スキル",
     achieveTitle: "// 実績",
     hobbyTitle: "// 趣味",
+
+    // achievement.html
     achPageTitle: "実績ログ",
     achSub: "証明書と受賞歴",
-    certTitle1: "HKICO",
-    certDesc1: "全国プログラミングコンテストで金メダル",
-    certTitle2: "留学証明書",
-    certDesc2: "国際留学プログラム参加者",
-    certTitle3: "優秀賞",
-    certDesc3: "優秀な学業成績の表彰",
     certTitle4: "コンペティション証明書",
+    certTitle1: "HKICO",
+    certDesc1:
+      "金賞 — 香港国際計算オリンピック ヒートラウンド 2025–2026（高校生部門・Python）",
+    certTitle2: "OSP",
+    certDesc2: "金メダル — 州科学オリンピック（OSP）2026",
+    certTitle3: "OSH",
+    certDesc3: "金メダル — 科学オリンピック　国民教育の日 2026",
+
+    // project.html
     projPageTitle: "プロジェクト一覧",
     projSub: "作業中...",
+    projDesc: "私のウェブポートフォリオプロジェクト。",
     projEmpty: "まだプロジェクトはありません。後でまたご覧ください。",
-  },
-  ko: {
-    badge: "// 시스템 온라인",
-    tagline: "개발자 · 창작자 · 혁신자",
-    heroDesc:
-      "사이버 포트폴리오에 오신 것을 환영합니다. 메뉴를 사용하여 탐색하세요.",
-    ctaAbout: "프로필 보기",
-    ctaProject: "프로젝트 보기",
-    aboutTitle: "ABOUT_ME.EXE",
-    aboutSub: "시스템 프로필 로드됨",
-    bioText:
-      "기술로 무언가를 만드는 것을 좋아하는 열정적인 개발자입니다. 항상 배우고, 항상 창조합니다.",
-    skillsTitle: "// 기술",
-    achieveTitle: "// 성취",
-    hobbyTitle: "// 취미",
-    achPageTitle: "성취 로그",
-    achSub: "인증서 및 수상",
-    certTitle1: "HKICO",
-    certDesc1: "홍콩 국제 코딩 올림피아드 금메달",
-    certTitle2: "교환학생 인증서",
-    certDesc2: "국제 교환학생 프로그램 참가자",
-    certTitle3: "우수상",
-    certTitle4: "대회 인증서",
-    certDesc3: "뛰어난 학업 성취 인정",
-    projPageTitle: "프로젝트 디렉토리",
-    projSub: "작업 중...",
-    projEmpty: "아직 프로젝트가 없습니다. 나중에 다시 확인하세요.",
-  },
-  zh: {
-    badge: "// 系统在线",
-    tagline: "开发者 · 创作者 · 创新者",
-    heroDesc: "欢迎来到我的赛博作品集。使用菜单浏览系统。",
-    ctaAbout: "查看简介",
-    ctaProject: "查看项目",
-    aboutTitle: "ABOUT_ME.EXE",
-    aboutSub: "系统档案已加载",
-    bioText:
-      "我是一位充满激情的开发者和创作者，热爱用技术创造事物。不断学习，不断创造。",
-    skillsTitle: "// 技能",
-    achieveTitle: "// 成就",
-    hobbyTitle: "// 爱好",
-    achPageTitle: "成就日志",
-    achSub: "证书与荣誉",
-    certTitle1: "HKICO",
-    certDesc1: " Hongkong International Coding Olympiad 金牌获得者",
-    certTitle2: "交换生证书",
-    certDesc2: "国际交换生项目参与者",
-    certTitle3: "优秀奖",
-    certTitle4: "竞赛证书",
-    certDesc3: "杰出学业表现认可",
-    projPageTitle: "项目目录",
-    projSub: "进行中...",
-    projEmpty: "暂无项目。请稍后再来查看。",
   },
 };
 
