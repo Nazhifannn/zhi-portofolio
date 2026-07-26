@@ -59,7 +59,7 @@ const translations = {
     // achievement.html
     achPageTitle: "ACHIEVEMENT.LOG",
     achSub: "CERTIFICATES & HONORS",
-    certTitle4: "Competition Certificates",
+    certTitle4: "Competition Winner Certificates",
     certTitle1: "HKICO",
     certDesc1:
       "Gold Award — Senior Secondary Group in Python, Hong Kong International Computational Olympiad Heat Round 2025–2026",
@@ -95,7 +95,7 @@ const translations = {
     // achievement.html
     achPageTitle: "PENCAPAIAN.LOG",
     achSub: "SERTIFIKAT & PENGHARGAAN",
-    certTitle4: "Sertifikat Kompetisi",
+    certTitle4: "Sertifikat Juara Kompetisi",
     certTitle1: "HKICO",
     certDesc1:
       "Gold Award — Kelompok SMA dalam Python, Hong Kong International Computational Olympiad Heat Round 2025–2026",
@@ -131,7 +131,7 @@ const translations = {
     // achievement.html
     achPageTitle: "実績ログ",
     achSub: "証明書と受賞歴",
-    certTitle4: "コンペティション証明書",
+    certTitle4: "コンテスト入賞証明書",
     certTitle1: "HKICO",
     certDesc1:
       "金賞 — 香港国際計算オリンピック ヒートラウンド 2025–2026（高校生部門・Python）",
