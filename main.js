@@ -39,9 +39,17 @@ langDropdown.addEventListener("click", (e) => e.stopPropagation());
 // juga di ketiga bahasa (en / id / ja) supaya tidak ada yang kelewat.
 const translations = {
   en: {
+    // navbar (shared across all pages)
+    navHome: "HOME",
+    navAbout: "ABOUT ME",
+    navAchievement: "ACHIEVEMENT",
+    navProject: "PROJECT",
+    navHeader: "// NAVIGATE",
+    langBtnLabel: "LANG",
+
     // index.html
     badge: "// SYSTEM ONLINE",
-    tagline: "DEVELOPER · CREATOR · INNOVATOR",
+    tagline: "DEVELOPER · CREATOR · GAMER",
     heroDesc:
       "Welcome to my website portfolio. Navigate through the system using the menu.",
     ctaAbout: "ACCESS PROFILE",
@@ -52,14 +60,40 @@ const translations = {
     aboutSub: "SYSTEM PROFILE LOADED",
     bioText:
       "I'm a passionate developer and creator who loves building things with technology. Always learning, always creating.",
+    profileRole: "// DEVELOPER & CREATOR",
+    statProjects: "Projects",
+    statAwards: "Awards",
+    statYears: "Years",
     skillsTitle: "// SKILLS",
     achieveTitle: "// ACHIEVEMENTS",
+    achMiniHkico: "HKICO 2026 – International Level - Gold Medal",
+    achMiniOsp: "OSP 2026 – Provincial Level - Gold Medal",
+    achMiniOsh: "OSH 2026 – National Level - Gold Medal",
+    seeMoreAch: "VIEW ALL ACHIEVEMENTS →",
     hobbyTitle: "// HOBBIES",
+    hobbyCoding: "💻 Coding",
+    hobbyGaming: "🎮 Gaming",
+    hobbyMusic: "🎵 Music",
+    hobbyDesign: "🎨 Design",
+    hobbyTraveling: "🌏 Traveling",
+    hobbyPhotography: "📷 Photography",
+    hobbyAI: "🤖 AI & Tech",
 
     // achievement.html
     achPageTitle: "ACHIEVEMENT.LOG",
     achSub: "CERTIFICATES & HONORS",
+    achPageDesc:
+      "Unlocked achievements and earned certificates throughout the journey.",
+    statCert: "Certificates",
+    statComp: "Competition",
+    statDedication: "Dedication",
     certTitle4: "Competition Winner Certificates",
+    catInternational: "INTERNATIONAL COMPETITION",
+    catProvincial: "PROVINCIAL COMPETITION",
+    catNational: "NATIONAL COMPETITION",
+    certRibbonGold: "GOLD MEDAL",
+    certLevelGold: "🏅 GOLD MEDAL",
+    certBadgeVerified: "VERIFIED",
     certTitle1: "HKICO",
     certDesc1:
       "Gold Award — Senior Secondary Group in Python, Hong Kong International Computational Olympiad Heat Round 2025–2026",
@@ -73,11 +107,32 @@ const translations = {
     projSub: "WORK IN PROGRESS...",
     projDesc: "My web portfolio project.",
     projEmpty: "No projects loaded yet. Check back soon.",
+    mySiteLabel: "MY SITE",
+    viewProjectBtn: "VIEW PROJECT →",
+    techStackLabel: "// TECH STACK",
+    videoComingSoonTitle: "VIDEO COMING SOON",
+    videoComingSoonSub: "// Demo video not yet uploaded",
+    visitSiteBtn: "🌐 VISIT SITE",
+    sourceCodeBtn: "</> SOURCE CODE",
+    projMbfCardDesc:
+      "The MBI Big Fair (MBF) is an annual event organized by MBI Amanatul Ummah in Pacet, Mojokerto.",
+    projMbfModalDesc:
+      "The MBI Big Fair (MBF) is an annual event organized by MBI Amanatul Ummah in Pacet, Mojokerto. Now in its 17th year, the MBI Big Fair continues its tradition as a prestigious competition platform featuring a variety of contests and a series of inspiring events. The event is made even more vibrant by the creative, innovative, and extraordinary works of MBI students, making MBF a stage for the expression of talent, imagination, and achievement.",
+    projJamuDesc:
+      "A website I created myself called \u201CJamu Bu Retno\u201D using HTML, CSS, and JavaScript",
   },
   id: {
+    // navbar (shared across all pages)
+    navHome: "BERANDA",
+    navAbout: "TENTANG SAYA",
+    navAchievement: "PENCAPAIAN",
+    navProject: "PROYEK",
+    navHeader: "// NAVIGASI",
+    langBtnLabel: "BAHASA",
+
     // index.html
     badge: "// SISTEM AKTIF",
-    tagline: "DEVELOPER · KREATOR · INOVATOR",
+    tagline: "DEVELOPER · KREATOR · GAMER",
     heroDesc:
       "Selamat datang di website portofolio saya. Navigasi melalui sistem menggunakan menu.",
     ctaAbout: "LIHAT PROFIL",
@@ -88,14 +143,39 @@ const translations = {
     aboutSub: "PROFIL SISTEM DIMUAT",
     bioText:
       "Saya adalah developer dan kreator yang penuh semangat, senang membangun sesuatu dengan teknologi. Selalu belajar, selalu berkarya.",
+    profileRole: "// DEVELOPER & KREATOR",
+    statProjects: "Proyek",
+    statAwards: "Penghargaan",
+    statYears: "Tahun",
     skillsTitle: "// KEAHLIAN",
     achieveTitle: "// PENCAPAIAN",
+    achMiniHkico: "HKICO 2026 – Tingkat Internasional - Medali Emas",
+    achMiniOsp: "OSP 2026 – Tingkat Provinsi - Medali Emas",
+    achMiniOsh: "OSH 2026 – Tingkat Nasional - Medali Emas",
+    seeMoreAch: "LIHAT SEMUA PENCAPAIAN →",
     hobbyTitle: "// HOBI",
+    hobbyCoding: "💻 Coding",
+    hobbyGaming: "🎮 Gaming",
+    hobbyMusic: "🎵 Musik",
+    hobbyDesign: "🎨 Desain",
+    hobbyTraveling: "🌏 Traveling",
+    hobbyPhotography: "📷 Fotografi",
+    hobbyAI: "🤖 AI & Teknologi",
 
     // achievement.html
     achPageTitle: "PENCAPAIAN.LOG",
     achSub: "SERTIFIKAT & PENGHARGAAN",
+    achPageDesc: "Pencapaian dan sertifikat yang diraih sepanjang perjalanan.",
+    statCert: "Sertifikat",
+    statComp: "Kompetisi",
+    statDedication: "Dedikasi",
     certTitle4: "Sertifikat Juara Kompetisi",
+    catInternational: "KOMPETISI INTERNASIONAL",
+    catProvincial: "KOMPETISI PROVINSI",
+    catNational: "KOMPETISI NASIONAL",
+    certRibbonGold: "MEDALI EMAS",
+    certLevelGold: "🏅 MEDALI EMAS",
+    certBadgeVerified: "TERVERIFIKASI",
     certTitle1: "HKICO",
     certDesc1:
       "Gold Award — Kelompok SMA dalam Python, Hong Kong International Computational Olympiad Heat Round 2025–2026",
@@ -109,11 +189,32 @@ const translations = {
     projSub: "DALAM PENGERJAAN...",
     projDesc: "Proyek website portofolio saya.",
     projEmpty: "Belum ada proyek yang dimuat. Kembali lagi nanti.",
+    mySiteLabel: "SITUS SAYA",
+    viewProjectBtn: "LIHAT PROYEK →",
+    techStackLabel: "// TECH STACK",
+    videoComingSoonTitle: "VIDEO SEGERA HADIR",
+    videoComingSoonSub: "// Video demo belum diunggah",
+    visitSiteBtn: "🌐 KUNJUNGI SITUS",
+    sourceCodeBtn: "</> KODE SUMBER",
+    projMbfCardDesc:
+      "MBI Big Fair (MBF) adalah acara tahunan yang diselenggarakan oleh MBI Amanatul Ummah di Pacet, Mojokerto.",
+    projMbfModalDesc:
+      "MBI Big Fair (MBF) adalah acara tahunan yang diselenggarakan oleh MBI Amanatul Ummah di Pacet, Mojokerto. Kini memasuki tahun ke-17, MBI Big Fair terus melanjutkan tradisinya sebagai ajang kompetisi bergengsi dengan berbagai lomba dan rangkaian acara yang inspiratif. Acara ini semakin semarak berkat karya-karya kreatif, inovatif, dan luar biasa dari siswa-siswi MBI, menjadikan MBF sebagai panggung ekspresi bakat, imajinasi, dan prestasi.",
+    projJamuDesc:
+      "Sebuah website yang saya buat sendiri bernama \u201CJamu Bu Retno\u201D menggunakan HTML, CSS, dan JavaScript",
   },
   ja: {
+    // navbar (shared across all pages)
+    navHome: "ホーム",
+    navAbout: "私について",
+    navAchievement: "実績",
+    navProject: "プロジェクト",
+    navHeader: "// ナビゲート",
+    langBtnLabel: "言語",
+
     // index.html
     badge: "// システム起動",
-    tagline: "開発者 · クリエイター · イノベーター",
+    tagline: "開発者 · クリエイター · ゲーマー",
     heroDesc:
       "私のポートフォリオサイトへようこそ。メニューを使ってサイト内を閲覧してください。",
     ctaAbout: "プロフィールを見る",
@@ -124,14 +225,39 @@ const translations = {
     aboutSub: "プロフィール読み込み完了",
     bioText:
       "技術で何かを作ることが大好きな情熱的な開発者です。常に学び、常に創造しています。",
+    profileRole: "// 開発者・クリエイター",
+    statProjects: "プロジェクト",
+    statAwards: "受賞",
+    statYears: "年",
     skillsTitle: "// スキル",
     achieveTitle: "// 実績",
+    achMiniHkico: "HKICO 2026 – 国際レベル - 金メダル",
+    achMiniOsp: "OSP 2026 – 州レベル - 金メダル",
+    achMiniOsh: "OSH 2026 – 全国レベル - 金メダル",
+    seeMoreAch: "すべての実績を見る →",
     hobbyTitle: "// 趣味",
+    hobbyCoding: "💻 コーディング",
+    hobbyGaming: "🎮 ゲーム",
+    hobbyMusic: "🎵 音楽",
+    hobbyDesign: "🎨 デザイン",
+    hobbyTraveling: "🌏 旅行",
+    hobbyPhotography: "📷 写真",
+    hobbyAI: "🤖 AI・テクノロジー",
 
     // achievement.html
     achPageTitle: "実績ログ",
     achSub: "証明書と受賞歴",
+    achPageDesc: "これまでの歩みの中で獲得した実績と証明書。",
+    statCert: "証明書",
+    statComp: "コンテスト",
+    statDedication: "献身度",
     certTitle4: "コンテスト入賞証明書",
+    catInternational: "国際コンテスト",
+    catProvincial: "州コンテスト",
+    catNational: "全国コンテスト",
+    certRibbonGold: "金メダル",
+    certLevelGold: "🏅 金メダル",
+    certBadgeVerified: "認証済み",
     certTitle1: "HKICO",
     certDesc1:
       "金賞 — 香港国際計算オリンピック ヒートラウンド 2025–2026（高校生部門・Python）",
@@ -145,6 +271,19 @@ const translations = {
     projSub: "作業中...",
     projDesc: "私のウェブポートフォリオプロジェクト。",
     projEmpty: "まだプロジェクトはありません。後でまたご覧ください。",
+    mySiteLabel: "マイサイト",
+    viewProjectBtn: "プロジェクトを見る →",
+    techStackLabel: "// 技術スタック",
+    videoComingSoonTitle: "動画準備中",
+    videoComingSoonSub: "// デモ動画は未アップロードです",
+    visitSiteBtn: "🌐 サイトを見る",
+    sourceCodeBtn: "</> ソースコード",
+    projMbfCardDesc:
+      "MBI Big Fair（MBF）は、モジョクルト県パチェットにあるMBI Amanatul Ummahが主催する毎年恒例のイベントです。",
+    projMbfModalDesc:
+      "MBI Big Fair（MBF）は、モジョクルト県パチェットにあるMBI Amanatul Ummahが主催する毎年恒例のイベントです。17回目を迎える今年も、多彩なコンテストとインスピレーションあふれる一連のイベントを特色とする、権威あるコンペティションの場としての伝統を続けています。MBIの学生たちによる創造的で革新的、そして素晴らしい作品の数々が、このイベントをさらに盛り上げ、MBFは才能、想像力、そして成果を表現する舞台となっています。",
+    projJamuDesc:
+      "HTML、CSS、JavaScriptを使って自分で制作したウェブサイト「Jamu Bu Retno」",
   },
 };
 
@@ -158,6 +297,7 @@ function applyTranslations(lang) {
     const key = el.getAttribute("data-i18n");
     if (t[key]) el.textContent = t[key];
   });
+  document.dispatchEvent(new CustomEvent("i18nchange", { detail: { lang } }));
 }
 
 document.querySelectorAll(".lang-opt").forEach((btn) => {

@@ -529,11 +529,63 @@ body {
   align-items: center;
   gap: 4px;
 }
+/* LARGE SCREENS */
+@media (min-width: 1400px) {
+  .page-main {
+    max-width: 1320px;
+  }
+}
+
+@media (max-width: 700px) {
+  .stats-bar {
+    gap: 12px;
+  }
+  .stat-box {
+    min-width: 100px;
+    padding: 12px;
+  }
+}
+
 @media (max-width: 600px) {
+  .navbar {
+    padding: 0 14px;
+    gap: 10px;
+  }
+  .nav-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
   .page-main {
     padding: 80px 16px 40px;
   }
   .cert-grid {
     grid-template-columns: 1fr;
+  }
+  .cert-card {
+    padding: 22px 18px;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 400px) {
+  .stats-bar {
+    flex-direction: column;
+  }
+  .stat-box {
+    width: 100%;
+  }
+  .cert-ribbon {
+    font-size: 9px;
+    padding: 3px 14px 3px 10px;
+  }
+  .cert-icon {
+    font-size: 28px;
+  }
+  .cert-name {
+    font-size: 14px;
+  }
+  .cert-meta {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }

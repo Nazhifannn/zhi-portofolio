@@ -29,33 +29,37 @@
     <nav class="navbar" data-reveal="down" data-reveal-delay="1">
       <button class="hamburger" id="hamburger">☰</button>
       <div class="side-menu" id="sideMenu">
-        <div class="menu-header">// NAVIGATE</div>
+        <div class="menu-header" data-i18n="navHeader">// NAVIGATE</div>
         <ul>
           <li>
-            <a href="index.html" class="menu-link" data-page="home">⬡ HOME</a>
+            <a href="index.html" class="menu-link" data-page="home"
+              >⬡ <span data-i18n="navHome">HOME</span></a
+            >
           </li>
           <li>
             <a href="about.html" class="menu-link active" data-page="about"
-              >⬡ ABOUT ME</a
+              >⬡ <span data-i18n="navAbout">ABOUT ME</span></a
             >
           </li>
           <li>
             <a href="achievement.html" class="menu-link" data-page="achievement"
-              >⬡ ACHIEVEMENT</a
+              >⬡ <span data-i18n="navAchievement">ACHIEVEMENT</span></a
             >
           </li>
           <li>
             <a href="project.html" class="menu-link" data-page="project"
-              >⬡ PROJECT</a
+              >⬡ <span data-i18n="navProject">PROJECT</span></a
             >
           </li>
         </ul>
         <div class="menu-footer">SYS.VER 1.0.0</div>
       </div>
       <div class="overlay" id="overlay"></div>
-      <div class="nav-title">ABOUT_ME.EXE</div>
+      <div class="nav-title" data-i18n="aboutTitle">ABOUT_ME.EXE</div>
       <div class="translate-wrapper">
-        <button class="translate-btn" id="translateBtn">🌐 LANG</button>
+        <button class="translate-btn" id="translateBtn">
+          🌐 <span data-i18n="langBtnLabel">LANG</span>
+        </button>
         <div class="lang-dropdown" id="langDropdown">
           <button class="lang-opt" data-lang="en">🇺🇸 English</button>
           <button class="lang-opt" data-lang="id">🇮🇩 Indonesia</button>
@@ -86,7 +90,9 @@
             <div class="avatar-ring"></div>
           </div>
           <div class="profile-name">NAJWAN AZHIM AFANDI</div>
-          <div class="profile-role">// DEVELOPER & CREATOR</div>
+          <div class="profile-role" data-i18n="profileRole">
+            // DEVELOPER & CREATOR
+          </div>
           <p class="profile-bio" data-i18n="bioText">
             I'm a passionate developer and creator who loves building things
             with technology. Always learning, always creating.
@@ -94,15 +100,15 @@
           <div class="profile-stats">
             <div class="stat">
               <span class="stat-num">10+</span
-              ><span class="stat-label">Projects</span>
+              ><span class="stat-label" data-i18n="statProjects">Projects</span>
             </div>
             <div class="stat">
               <span class="stat-num">5+</span
-              ><span class="stat-label">Awards</span>
+              ><span class="stat-label" data-i18n="statAwards">Awards</span>
             </div>
             <div class="stat">
-              <span class="stat-num">17+</span
-              ><span class="stat-label">Years</span>
+              <span class="stat-num">18+</span
+              ><span class="stat-label" data-i18n="statYears">Years</span>
             </div>
           </div>
         </div>
@@ -148,20 +154,6 @@
                 </div>
                 <span class="skill-pct">85%</span>
               </div>
-              <div class="skill-item" data-reveal="up" data-reveal-delay="6">
-                <div class="skill-name">Valorant</div>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--pct: 100%"></div>
-                </div>
-                <span class="skill-pct">100%</span>
-              </div>
-              <div class="skill-item" data-reveal="up" data-reveal-delay="6">
-                <div class="skill-name">Mobile Legend</div>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--pct: 100%"></div>
-                </div>
-                <span class="skill-pct">100%</span>
-              </div>
             </div>
           </div>
 
@@ -173,24 +165,24 @@
             <div class="mini-list">
               <div class="mini-item" data-reveal="left" data-reveal-delay="2">
                 <span class="mini-icon">🏅</span>
-                <span class="mini-text"
+                <span class="mini-text" data-i18n="achMiniHkico"
                   >HKICO 2026 – International Level - Gold Medal</span
                 >
               </div>
               <div class="mini-item" data-reveal="left" data-reveal-delay="3">
                 <span class="mini-icon">🏅</span>
-                <span class="mini-text"
+                <span class="mini-text" data-i18n="achMiniOsp"
                   >OSP 2026 – Provincial Level - Gold Medal</span
                 >
               </div>
               <div class="mini-item" data-reveal="left" data-reveal-delay="4">
                 <span class="mini-icon">🏅</span>
-                <span class="mini-text"
+                <span class="mini-text" data-i18n="achMiniOsh"
                   >OSH 2026 – National Level - Gold Medal</span
                 >
               </div>
             </div>
-            <a href="achievement.html" class="see-more"
+            <a href="achievement.html" class="see-more" data-i18n="seeMoreAch"
               >VIEW ALL ACHIEVEMENTS →</a
             >
           </div>
@@ -199,25 +191,53 @@
           <div class="section-card" data-reveal="up" data-reveal-delay="3">
             <div class="section-label" data-i18n="hobbyTitle">// HOBBIES</div>
             <div class="hobby-tags">
-              <span class="htag" data-reveal="scale" data-reveal-delay="1"
+              <span
+                class="htag"
+                data-reveal="scale"
+                data-reveal-delay="1"
+                data-i18n="hobbyCoding"
                 >💻 Coding</span
               >
-              <span class="htag" data-reveal="scale" data-reveal-delay="2"
+              <span
+                class="htag"
+                data-reveal="scale"
+                data-reveal-delay="2"
+                data-i18n="hobbyGaming"
                 >🎮 Gaming</span
               >
-              <span class="htag" data-reveal="scale" data-reveal-delay="3"
+              <span
+                class="htag"
+                data-reveal="scale"
+                data-reveal-delay="3"
+                data-i18n="hobbyMusic"
                 >🎵 Music</span
               >
-              <span class="htag" data-reveal="scale" data-reveal-delay="5"
+              <span
+                class="htag"
+                data-reveal="scale"
+                data-reveal-delay="5"
+                data-i18n="hobbyDesign"
                 >🎨 Design</span
               >
-              <span class="htag" data-reveal="scale" data-reveal-delay="6"
+              <span
+                class="htag"
+                data-reveal="scale"
+                data-reveal-delay="6"
+                data-i18n="hobbyTraveling"
                 >🌏 Traveling</span
               >
-              <span class="htag" data-reveal="scale" data-reveal-delay="7"
+              <span
+                class="htag"
+                data-reveal="scale"
+                data-reveal-delay="7"
+                data-i18n="hobbyPhotography"
                 >📷 Photography</span
               >
-              <span class="htag" data-reveal="scale" data-reveal-delay="8"
+              <span
+                class="htag"
+                data-reveal="scale"
+                data-reveal-delay="8"
+                data-i18n="hobbyAI"
                 >🤖 AI & Tech</span
               >
             </div>

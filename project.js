@@ -30,11 +30,33 @@ const dotColors = {
 };
 
 // ===== OPEN MODAL =====
+let currentOpenCard = null;
+
 function openModal(card) {
+  currentOpenCard = card;
   const title = card.getAttribute("data-title") || "";
-  const cat = card.getAttribute("data-category") || "";
   const filter = card.getAttribute("data-filter") || "ai";
-  const desc = card.getAttribute("data-desc") || "";
+
+  // Prefer translated text (data-*-key) when available, falling back to the
+  // raw data-category / data-desc attributes so the modal follows the
+  // currently selected language.
+  const catKey = card.getAttribute("data-category-key");
+  const cat =
+    catKey &&
+    typeof translations !== "undefined" &&
+    translations[currentLang] &&
+    translations[currentLang][catKey]
+      ? translations[currentLang][catKey]
+      : card.getAttribute("data-category") || "";
+
+  const descKey = card.getAttribute("data-desc-key");
+  const desc =
+    descKey &&
+    typeof translations !== "undefined" &&
+    translations[currentLang] &&
+    translations[currentLang][descKey]
+      ? translations[currentLang][descKey]
+      : card.getAttribute("data-desc") || "";
   const techStr = card.getAttribute("data-tech") || "";
   const videoUrl = card.getAttribute("data-video") || "";
   const siteUrl = card.getAttribute("data-site") || "";
@@ -372,6 +394,7 @@ function initDemo(key, wrap) {
 }
 
 function closeModal() {
+  currentOpenCard = null;
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
@@ -412,4 +435,20 @@ modal.addEventListener("click", (e) => {
 // ESC key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
+});
+
+// Re-translate the modal's category/description if the language is
+// switched while a project modal is open (video keeps playing as-is).
+document.addEventListener("i18nchange", () => {
+  if (modal.classList.contains("open") && currentOpenCard) {
+    const catKey = currentOpenCard.getAttribute("data-category-key");
+    if (catKey && translations[currentLang] && translations[currentLang][catKey]) {
+      const val = translations[currentLang][catKey];
+      modalCat.textContent = val;
+    }
+    const descKey = currentOpenCard.getAttribute("data-desc-key");
+    if (descKey && translations[currentLang] && translations[currentLang][descKey]) {
+      modalDesc.textContent = translations[currentLang][descKey];
+    }
+  }
 });

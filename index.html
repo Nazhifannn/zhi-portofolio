@@ -70,26 +70,26 @@
     <nav class="navbar" data-reveal="down" data-reveal-delay="1">
       <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
       <div class="side-menu" id="sideMenu">
-        <div class="menu-header">// NAVIGATE</div>
+        <div class="menu-header" data-i18n="navHeader">// NAVIGATE</div>
         <ul>
           <li>
             <a href="index.html" class="menu-link active" data-page="home"
-              >⬡ HOME</a
+              >⬡ <span data-i18n="navHome">HOME</span></a
             >
           </li>
           <li>
             <a href="about.html" class="menu-link" data-page="about"
-              >⬡ ABOUT ME</a
+              >⬡ <span data-i18n="navAbout">ABOUT ME</span></a
             >
           </li>
           <li>
             <a href="achievement.html" class="menu-link" data-page="achievement"
-              >⬡ ACHIEVEMENT</a
+              >⬡ <span data-i18n="navAchievement">ACHIEVEMENT</span></a
             >
           </li>
           <li>
             <a href="project.html" class="menu-link" data-page="project"
-              >⬡ PROJECT</a
+              >⬡ <span data-i18n="navProject">PROJECT</span></a
             >
           </li>
         </ul>
@@ -97,7 +97,9 @@
       </div>
       <div class="overlay" id="overlay"></div>
       <div class="translate-wrapper">
-        <button class="translate-btn" id="translateBtn">🌐 LANG</button>
+        <button class="translate-btn" id="translateBtn">
+          🌐 <span data-i18n="langBtnLabel">LANG</span>
+        </button>
         <div class="lang-dropdown" id="langDropdown">
           <button class="lang-opt" data-lang="en">🇺🇸 English</button>
           <button class="lang-opt" data-lang="id">🇮🇩 Indonesia</button>
@@ -132,7 +134,7 @@
           data-reveal="up"
           data-reveal-delay="4"
         >
-          DEVELOPER · CREATOR · INNOVATOR
+          DEVELOPER · CREATOR · GAMER
         </p>
         <div
           class="hero-desc"

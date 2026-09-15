@@ -11,14 +11,38 @@ function runOpeningAnimation() {
   // Block scroll while overlay is visible
   document.body.style.overflow = 'hidden';
 
-  // Animate loader percentage counter
+  // Animate the loading bar and the percentage counter together, driven by
+  // the same timeline, so the number always matches how "full" the bar is.
   const pctEl = overlay.querySelector('.op-loader-pct');
-  let pct = 0;
-  const pctInterval = setInterval(() => {
-    pct = Math.min(pct + Math.floor(Math.random() * 4) + 1, 100);
-    if (pctEl) pctEl.textContent = pct + '%';
-    if (pct >= 100) clearInterval(pctInterval);
-  }, 35);
+  const fillEl = overlay.querySelector('.op-loader-fill');
+
+  const startDelay = 900; // ms — matches the loader wrap's fade-in delay
+  const duration = 2400; // ms — total time to go from 0% to 100%
+
+  // Approximates the previous cubic-bezier(0.4, 0, 0.2, 1) easing so the
+  // motion feels the same as before, just synced.
+  function ease(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  let startTime = null;
+  function tick(timestamp) {
+    if (startTime === null) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const t = Math.min(elapsed / duration, 1);
+    const progress = ease(t) * 100;
+
+    if (fillEl) fillEl.style.width = progress + '%';
+    if (pctEl) pctEl.textContent = Math.round(progress) + '%';
+
+    if (t < 1) {
+      requestAnimationFrame(tick);
+    }
+  }
+
+  setTimeout(() => requestAnimationFrame(tick), startDelay);
 
   // Total animation is ~3.8s, then exit
   setTimeout(() => {
