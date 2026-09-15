@@ -52,6 +52,7 @@ body {
   color: var(--cyan);
   font-size: 20px;
   width: 42px; height: 42px;
+  flex-shrink: 0;
   cursor: pointer;
   transition: transform 0.4s ease, background 0.2s;
   border-radius: 4px;
@@ -138,7 +139,7 @@ body {
 .overlay.show { display: block; }
 
 /* TRANSLATE */
-.translate-wrapper { position: relative; }
+.translate-wrapper { position: relative; flex-shrink: 0; }
 
 .translate-btn {
   background: none;

@@ -1,4 +1,22 @@
 /* ============================
+   GLOBAL RESPONSIVE SAFETY NET
+   (loaded on every page — prevents any element from
+   forcing horizontal overflow / the need to pinch-zoom-out
+   on small devices)
+   ============================ */
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================
    OPENING ANIMATION OVERLAY
    ============================ */
 
@@ -368,6 +386,118 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ============================
+   OPENING OVERLAY — RESPONSIVE
+   ============================ */
+@media (max-width: 700px) {
+  #opening-overlay .op-corner {
+    width: 44px;
+    height: 44px;
+  }
+  #opening-overlay .op-corner.tl,
+  #opening-overlay .op-corner.tr {
+    top: 24px;
+  }
+  #opening-overlay .op-corner.bl,
+  #opening-overlay .op-corner.br {
+    bottom: 24px;
+  }
+  #opening-overlay .op-corner.tl,
+  #opening-overlay .op-corner.bl {
+    left: 20px;
+  }
+  #opening-overlay .op-corner.tr,
+  #opening-overlay .op-corner.br {
+    right: 20px;
+  }
+
+  #opening-overlay .op-hex-wrap {
+    width: 96px;
+    height: 96px;
+  }
+  #opening-overlay .op-hex-ring.h1 {
+    width: 50px;
+    height: 50px;
+  }
+  #opening-overlay .op-hex-ring.h2 {
+    width: 74px;
+    height: 74px;
+  }
+  #opening-overlay .op-hex-ring.h3 {
+    width: 96px;
+    height: 96px;
+  }
+
+  #opening-overlay .op-title {
+    letter-spacing: 3px;
+    padding: 0 16px;
+  }
+  #opening-overlay .op-subtitle {
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 0 16px;
+  }
+
+  #opening-overlay .op-boot-lines {
+    min-width: 0;
+    width: min(320px, 82vw);
+    font-size: 11px;
+  }
+
+  #opening-overlay .op-loader-wrap {
+    bottom: 56px;
+    width: 88vw;
+  }
+}
+
+@media (max-width: 420px) {
+  #opening-overlay .op-center {
+    gap: 16px;
+  }
+  #opening-overlay .op-hex-wrap {
+    width: 76px;
+    height: 76px;
+  }
+  #opening-overlay .op-hex-ring.h1 {
+    width: 40px;
+    height: 40px;
+  }
+  #opening-overlay .op-hex-ring.h2 {
+    width: 58px;
+    height: 58px;
+  }
+  #opening-overlay .op-hex-ring.h3 {
+    width: 76px;
+    height: 76px;
+  }
+  #opening-overlay .op-title {
+    letter-spacing: 2px;
+  }
+  #opening-overlay .op-boot-lines {
+    width: min(260px, 84vw);
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  #opening-overlay .op-loader-wrap {
+    bottom: 44px;
+  }
+}
+
+@media (max-height: 560px) {
+  /* short viewports (landscape phones) — shrink the boot log so it
+     doesn't get cramped against the loader bar */
+  #opening-overlay .op-boot-lines {
+    display: none;
+  }
+  #opening-overlay .op-hex-wrap {
+    width: 70px;
+    height: 70px;
+  }
+  #opening-overlay .op-hex-ring.h1 { width: 36px; height: 36px; }
+  #opening-overlay .op-hex-ring.h2 { width: 52px; height: 52px; }
+  #opening-overlay .op-hex-ring.h3 { width: 70px; height: 70px; }
 }
 
 /* ============================
