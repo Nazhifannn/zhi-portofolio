@@ -102,6 +102,9 @@ const translations = {
     certDesc2: "Gold Medal — Provincial Science Olympiad (OSP) 2026",
     certTitle3: "OSH",
     certDesc3: "Gold Medal — National Education Day Science Olympiad 2026",
+    certTitle5: "OMNI",
+    certDesc5:
+      "Gold Medal — Indonesian National Mathematics Olympiad (OMNI) 2026, Senior High School Informatics Olympiad, National Level",
 
     // project.html
     projPageTitle: "PROJECT.DIR",
@@ -121,6 +124,10 @@ const translations = {
       "The MBI Big Fair (MBF) is an annual event organized by MBI Amanatul Ummah in Pacet, Mojokerto. Now in its 17th year, the MBI Big Fair continues its tradition as a prestigious competition platform featuring a variety of contests and a series of inspiring events. The event is made even more vibrant by the creative, innovative, and extraordinary works of MBI students, making MBF a stage for the expression of talent, imagination, and achievement.",
     projJamuDesc:
       "A website I created myself called \u201CJamu Bu Retno\u201D using HTML, CSS, and JavaScript",
+    projCompSciGameCardDesc:
+      "An educational game to make learning English more fun through interactive animations.",
+    projCompSciGameDesc:
+      "Computer Science Game Project is an educational game built to make learning English more engaging and enjoyable. It combines interactive gameplay with playful animations and simple game mechanics, turning vocabulary and grammar practice into a fun experience so learners stay motivated instead of getting bored with traditional study methods.",
   },
   id: {
     // navbar (shared across all pages)
@@ -185,6 +192,9 @@ const translations = {
     certDesc2: "Medali Emas — Olimpiade Sains Provinsi (OSP) 2026",
     certTitle3: "OSH",
     certDesc3: "Medali Emas — olimpiade sains hari pendidikan nasional 2026",
+    certTitle5: "OMNI",
+    certDesc5:
+      "Medali Emas — Olimpiade Matematika Nasional Indonesia (OMNI) 2026, Olimpiade Informatika SMA, Tingkat Nasional",
 
     // project.html
     projPageTitle: "PROYEK.DIR",
@@ -204,6 +214,10 @@ const translations = {
       "MBI Big Fair (MBF) adalah acara tahunan yang diselenggarakan oleh MBI Amanatul Ummah di Pacet, Mojokerto. Kini memasuki tahun ke-17, MBI Big Fair terus melanjutkan tradisinya sebagai ajang kompetisi bergengsi dengan berbagai lomba dan rangkaian acara yang inspiratif. Acara ini semakin semarak berkat karya-karya kreatif, inovatif, dan luar biasa dari siswa-siswi MBI, menjadikan MBF sebagai panggung ekspresi bakat, imajinasi, dan prestasi.",
     projJamuDesc:
       "Sebuah website yang saya buat sendiri bernama \u201CJamu Bu Retno\u201D menggunakan HTML, CSS, dan JavaScript",
+    projCompSciGameCardDesc:
+      "Sebuah game edukasi untuk membuat belajar bahasa Inggris lebih seru lewat animasi interaktif.",
+    projCompSciGameDesc:
+      "Computer Science Game Project adalah sebuah game edukasi yang dibuat untuk membuat proses belajar bahasa Inggris menjadi lebih seru dan menyenangkan. Proyek ini memadukan gameplay interaktif dengan animasi yang menarik dan mekanisme permainan sederhana, mengubah latihan kosakata dan tata bahasa menjadi pengalaman yang menyenangkan agar pembelajar tetap termotivasi dan tidak bosan dengan metode belajar konvensional.",
   },
   ja: {
     // navbar (shared across all pages)
@@ -268,6 +282,9 @@ const translations = {
     certDesc2: "金メダル — 州科学オリンピック（OSP）2026",
     certTitle3: "OSH",
     certDesc3: "金メダル — 科学オリンピック　国民教育の日 2026",
+    certTitle5: "OMNI",
+    certDesc5:
+      "金メダル — インドネシア全国数学オリンピック（OMNI）2026、高校生情報オリンピック、全国レベル",
 
     // project.html
     projPageTitle: "プロジェクト一覧",
@@ -287,6 +304,10 @@ const translations = {
       "MBI Big Fair（MBF）は、モジョクルト県パチェットにあるMBI Amanatul Ummahが主催する毎年恒例のイベントです。17回目を迎える今年も、多彩なコンテストとインスピレーションあふれる一連のイベントを特色とする、権威あるコンペティションの場としての伝統を続けています。MBIの学生たちによる創造的で革新的、そして素晴らしい作品の数々が、このイベントをさらに盛り上げ、MBFは才能、想像力、そして成果を表現する舞台となっています。",
     projJamuDesc:
       "HTML、CSS、JavaScriptを使って自分で制作したウェブサイト「Jamu Bu Retno」",
+    projCompSciGameCardDesc:
+      "インタラクティブなアニメーションを通じて、英語学習をより楽しくするための教育ゲームです。",
+    projCompSciGameDesc:
+      "Computer Science Game Projectは、英語学習をより楽しく、魅力的なものにするために作られた教育ゲームです。インタラクティブなゲームプレイと遊び心のあるアニメーション、シンプルなゲームメカニクスを組み合わせることで、単語や文法の練習を楽しい体験に変え、従来の学習方法で飽きてしまうことなく、学習者のモチベーションを維持できるよう工夫されています。",
   },
 };
 
